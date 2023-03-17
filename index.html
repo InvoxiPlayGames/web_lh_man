@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Web Lighthouse Manager</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="LoadDevices()">Load Devices</button>
+        <button onclick="RequestAdd()">Add Base Station</button>
+        <button onclick="RefreshAll()">Refresh</button>
+        <table>
+            <tbody id="device_table">
+                <tr>
+                    <th>Device Name</th>
+                    <th>Status*</th>
+                    <th>Controls</th>
+                </tr>
+            </tbody>
+        </table>
+		<br>
+		<small>*Status is not fully accurate.</small>
+        <script src="./basestations.js"></script>
+    </body>
+</html>

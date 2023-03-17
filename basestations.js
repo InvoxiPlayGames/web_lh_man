@@ -63,19 +63,19 @@ function RefreshLighthouseTable() {
 function RegisterBTDevice(device) {
     console.log(`discovered ${device.name}`);
     // if we have the device then don't care, re-poll though
-    if (device.name in lighthouses) {
-        PollHTCBSState(lighthouses[device.name]);
+    if (device.id in lighthouses) {
+        PollHTCBSState(lighthouses[device.id]);
         return;
     }
     // otherwise add
-    lighthouses[device.name] = {
+    lighthouses[device.id] = {
         name: device.name,
         browser_id: device.id,
         bt_device: device,
         laststate_raw: null
     }
     // then poll the state
-    PollHTCBSState(lighthouses[device.name]);
+    PollHTCBSState(lighthouses[device.id]);
 }
 
 function Swap16BE(i) {
